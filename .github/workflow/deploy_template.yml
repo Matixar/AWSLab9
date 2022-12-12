@@ -27,10 +27,10 @@ jobs:
         context: ./
         push: true
         tags: |
-          spg51/lab:ebs_frontend
+          matixar/lab:ebs_frontend
 
     - name: Generate deployment package
-      run: zip -r deploy.zip . -x '*.git*'
+      run: zip deploy.zip ./docker-compose.yml
 
     - name: Deploy to EB
       uses: einaregilsson/beanstalk-deploy@v21
